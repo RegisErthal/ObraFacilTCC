@@ -1,0 +1,44 @@
+﻿@page "/Etapas/Fundacao/FundacaoData"
+@using ObraFacil.Shared
+@using ObraFacil.Shared.Models
+@inject HttpClient Http
+
+<PageTitle>Fundação</PageTitle>
+
+<h1>Fundação</h1>
+
+@if (fundacoes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>AlturaPedra</th>
+                <th>AlturaViga</th>
+                <th>LarguraPedra</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in fundacoes)
+            {
+                <tr>
+                    <td>@item.AlturaPedra</td>
+                    <td>@item.AlturaViga</td>
+                    <td>@item.LarguraPedra</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private FundacaoModel[]? fundacoes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        fundacoes = await Http.GetFromJsonAsync<FundacaoModel[]>("Fundacao");
+    }
+}

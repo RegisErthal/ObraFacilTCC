@@ -1,0 +1,46 @@
+﻿@page "/Client/ClientData"
+@using ObraFacil.Shared
+@using ObraFacil.Shared.Models
+@inject HttpClient Http
+
+<PageTitle>ClientData</PageTitle>
+
+<h1>ClientData</h1>
+
+<p>ClientData</p>
+
+@if (clients == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in clients)
+            {
+                <tr>
+                    <td>@client.Name</td>
+                    <td>@client.Age</td>
+                    <td>@client.Id</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private ClientModel[]? clients;
+
+    protected override async Task OnInitializedAsync()
+    {
+        clients = await Http.GetFromJsonAsync<ClientModel[]>("Client");
+    }
+}
