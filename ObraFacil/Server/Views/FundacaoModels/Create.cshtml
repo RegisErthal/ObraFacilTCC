@@ -1,0 +1,73 @@
+﻿@model ObraFacil.Infra.Entities.FundacaoModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FundacaoModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TamanhoAlicerce" class="control-label"></label>
+                <input asp-for="TamanhoAlicerce" class="form-control" />
+                <span asp-validation-for="TamanhoAlicerce" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlturaPedra" class="control-label"></label>
+                <input asp-for="AlturaPedra" class="form-control" />
+                <span asp-validation-for="AlturaPedra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LarguraPedra" class="control-label"></label>
+                <input asp-for="LarguraPedra" class="form-control" />
+                <span asp-validation-for="LarguraPedra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfundidadePedra" class="control-label"></label>
+                <input asp-for="ProfundidadePedra" class="form-control" />
+                <span asp-validation-for="ProfundidadePedra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeEstacas" class="control-label"></label>
+                <input asp-for="QuantidadeEstacas" class="form-control" />
+                <span asp-validation-for="QuantidadeEstacas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BarrasFerro" class="control-label"></label>
+                <input asp-for="BarrasFerro" class="form-control" />
+                <span asp-validation-for="BarrasFerro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlturaViga" class="control-label"></label>
+                <input asp-for="AlturaViga" class="form-control" />
+                <span asp-validation-for="AlturaViga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfundidadeViga" class="control-label"></label>
+                <input asp-for="ProfundidadeViga" class="form-control" />
+                <span asp-validation-for="ProfundidadeViga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrevisaoEntrega" class="control-label"></label>
+                <input asp-for="PrevisaoEntrega" class="form-control" />
+                <span asp-validation-for="PrevisaoEntrega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

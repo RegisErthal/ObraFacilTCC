@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ObraFacil.Infra.Entities.FundacaoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TamanhoAlicerce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlturaPedra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LarguraPedra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfundidadePedra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeEstacas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BarrasFerro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlturaViga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfundidadeViga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrevisaoEntrega)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TamanhoAlicerce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlturaPedra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LarguraPedra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfundidadePedra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeEstacas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BarrasFerro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlturaViga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfundidadeViga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrevisaoEntrega)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
